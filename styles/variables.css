@@ -1,46 +1,41 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-  --font-variation-settings: 'Inter', sans-serif;
-  --accent-font-family: 'PressStart2P',monospace;
+  --font-variation-settings: "Inter", sans-serif;
+  --accent-font-family: "PressStart2P", monospace;
   --basic-font-text: 400;
   --basic-font-title: 700;
   --font-size: 18px;
   --text-color: rgba(0, 0, 0, 1);
   --border-section: 2px solid rgba(0, 0, 0, 1);
-  --content-max-width: 1440px; /* Максимальная ширина контента */
-  --content-min-width: 375px; /* Минимальная ширина контента */
+  --content-max-width: 1440px;
+  --content-min-width: 375px;
   --text-weight: 400;
   --title-weight: 700;
-  --background-image: 
-  repeating-linear-gradient(
-    0deg, 
-    #d3d3d3 0, 
-    #d3d3d3 2px, 
-    transparent 2px, 
-    transparent 4px
-  ),
-    repeating-linear-gradient(
-      90deg, 
-      #d3d3d3 0, 
-      #d3d3d3 2px, 
-      transparent 2px, 
+  --background-image: repeating-linear-gradient(
+      0deg,
+      #d3d3d3 0,
+      #d3d3d3 2px,
+      transparent 2px,
       transparent 4px
     ),
-    linear-gradient(
-      0deg, 
-      #e7e7e7 0.01%, 
-      #1a1a1a 100%
-    );
+    repeating-linear-gradient(
+      90deg,
+      #d3d3d3 0,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(0deg, #e7e7e7 0.01%, #1a1a1a 100%);
 
-    --light-color: rgba(255, 255, 255, 1);
-    --dark-color:rgba(0, 0, 0, 1);
-    --outline-color: rgba(255, 255, 255, 1);
-    --heart-main-body: rgba(255, 0, 0, 1);
-    --heart-contour: rgba(0, 0, 0, 1);
-    --heart-sparks: rgba(255, 0, 0, 1);
-    --heart-core:rgba(255, 255, 255, 1);
-    --heart-filling-active:  rgba(255, 0, 0, 1);
-    --heart-is-liked:  rgba(255, 0, 0, 1);
-    --heart-filling-hover: rgba(0, 0, 0, 1);
-    --transparency-heart: rgba(0, 0, 0, 0);
+  --light-color: rgba(255, 255, 255, 1);
+  --dark-color: rgba(0, 0, 0, 1);
+  --outline-color: rgba(255, 255, 255, 1);
+  --heart-main-body: rgba(255, 0, 0, 1);
+  --heart-contour: rgba(0, 0, 0, 1);
+  --heart-sparks: rgba(255, 0, 0, 1);
+  --heart-core: rgba(255, 255, 255, 1);
+  --heart-filling-active: rgba(255, 0, 0, 1);
+  --heart-is-liked: rgba(255, 0, 0, 1);
+  --heart-filling-hover: rgba(0, 0, 0, 1);
+  --transparency-heart: rgba(0, 0, 0, 0);
 }
