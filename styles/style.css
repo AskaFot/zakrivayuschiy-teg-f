@@ -234,7 +234,7 @@ h3 {
 
 .card__like-button.is-liked {
   font-size: 14px;
-  inline-size: 133px;
+  max-inline-size: 133px;
 }
 
 .button span,
