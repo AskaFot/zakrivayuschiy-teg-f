@@ -254,6 +254,7 @@ inset: 0;
   /* color: currentColor; */
   color: var(--light-color);
   background-color: var(--light-color);
+  max-inline-size: 133px;
 }
 
 .card__like-button.is-liked {
