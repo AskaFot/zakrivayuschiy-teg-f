@@ -9,6 +9,8 @@
   --border-section: 2px solid rgba(0, 0, 0, 1);
   --content-max-width: 1440px; /* Максимальная ширина контента */
   --content-min-width: 375px; /* Минимальная ширина контента */
+  --text-weight: 400;
+  --title-weight: 700;
   --background-image: 
   repeating-linear-gradient(
     0deg, 
