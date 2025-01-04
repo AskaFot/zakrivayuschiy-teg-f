@@ -15,7 +15,7 @@
   flex-direction: column;
   align-items: center;
   color: var(--text-color) rgba(0, 0, 0, 1);
-  font-family: var(--font-variation-settings);
+  font-family: var(--font-variation-settings, 'Inter', sans-serif);
   background-image: var(--background-image);
   background-repeat: no-repeat;
   background-position: center;
@@ -29,7 +29,7 @@ button {
 
 @supports (font-variation-settings: normal) {
   body {
-    font-family: var(--font-variation-settings), sans-serif;
+    font-family: var(--font-variation-settings, 'Inter', sans-serif), sans-serif;
   }
 }
 
@@ -68,7 +68,7 @@ button {
 }
 
 h1 {
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family, 'PressStart2P',monospace);
   font-weight: 400;
   font-size: clamp(3.0625rem, 2.7036rem + 1.5311vw, 4.0625rem);
   line-height: 49px;
@@ -78,7 +78,7 @@ h1 {
 }
 
 h2 {
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family, 'PressStart2P',monospace);
   font-weight: 400;
   font-size: clamp(0.875rem, 0.6731rem + 0.8612vw, 1.4375rem);
   line-height: 14px;
@@ -178,7 +178,7 @@ inset: 0;
   position: absolute;
   z-index: 2;
   color: rgba(0, 0, 0, 1);
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family, 'PressStart2P',monospace);
   font-weight: 400;
   font-size: 14px;
   line-height: 14px;
@@ -367,20 +367,20 @@ sparks — искры вокруг. */
   transition-delay: 0s;
 }
 
-.like-icon.is-liked .main-body {
+/* .like-icon.is-liked .main-body {
   fill: var(--transparency-heart);
   transition: fill 0.3s ease-in-out 0s;
-}
+} */
 
 .like-icon.is-liked .main-body {
   fill: var(--heart-is-liked);
   transition-delay: 0.05s;
 }
 
-.like-icon.is-liked .contour {
+/* .like-icon.is-liked .contour {
   fill: var(--transparency-heart);
   transition: fill 0.3s ease-in-out 0.06s;
-}
+} */
 
 .like-icon.is-liked .contour {
   fill: var(--heart-is-liked);
@@ -437,7 +437,7 @@ sparks — искры вокруг. */
 .button__text {
   position: relative;
   z-index: 3;
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family, 'PressStart2P',monospace);
   font-size: 14px;
 }
 
@@ -548,7 +548,7 @@ body:has(.save_button [open]) {
 
 }
 
-.footer_dialog[open]::backdrop{
+.footer_dialog[open]::backdrop {
   background-color: rgba(0, 0, 0, 7.5);
 opacity: 0.75;
 }
