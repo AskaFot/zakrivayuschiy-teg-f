@@ -179,9 +179,16 @@ h3 {
   padding: 25px;
 }
 
+.card_text {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: left;
+    }
+
 .card_like {
-  padding-inline-end: 21.5px;
-  padding-block-end: 26px;
+  padding-inline-end: 25.5px;
+  padding-block-end: 24px;
 }
 
 .buttons {
@@ -221,20 +228,22 @@ h3 {
 
 .card__like-button {
   position: relative;
-  padding: 6.5px 35px;
+  block-size: 38px;
+  inline-size: 130px;
 }
 
-.button{
+.card__like-button.is-liked {
+  font-size: 14px;
+  padding: 6.5px 35px;
+  inline-size: 133px;
+}
+
+.button {
   border: var(--border-section);
   box-shadow: 2px 2px transparent;
   overflow: hidden;
   color: var(--light-color);
   background-color: var(--light-color);
-}
-
-.card__like-button.is-liked {
-  font-size: 14px;
-  max-inline-size: 133px;
 }
 
 .button span,
@@ -391,8 +400,8 @@ body:has(.save_button [open]) {
   }
 
   .card_like {
-    padding-inline-end: 25.5px;
-    padding-block-end: 23px;
+    padding-inline-end: 24.5px;
+    padding-block-end: 22px;
   }
 
   .footer_card {

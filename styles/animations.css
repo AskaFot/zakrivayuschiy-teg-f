@@ -43,14 +43,14 @@
 }
 
 .heart:hover .main-body {
-  fill: var(--heart-filling-hover);
+  fill: var(-heart-filling-hover);
   transition-delay: 0.05s;
 }
-
+/* 
 .heart .main-body:hover {
   fill: var(--transparency-heart);
   transition: fill 0.3s ease-out;
-}
+} */
 
 .heart .core {
   fill: var(--transparency-heart);
