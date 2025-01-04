@@ -366,7 +366,7 @@
   </main>
   <footer class="footer">
 
-    <button onclick="window['menu-dialog'].showModal()" class="save_button save_button_cmd_open button_effect">
+    <!-- <button onclick="window['menu-dialog'].showModal()" class="save_button save_button_cmd_open button_effect">
       <div class="footer_card buttons">
         <div>
           <svg class="like-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39 39" height="25" width="25">
@@ -377,7 +377,20 @@
           <span class="button__text">Сохранить на память</span>
         </div>
       </div>
+    </button> -->
+    <button onclick="window['menu-dialog'].showModal()" class="save_button save_button_cmd_open button_effect">
+      <span class="footer_card buttons">
+        <span>
+          <svg class="like-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39 39" height="25" width="25">
+            <use href="./svg/floppy.svg#floppy"></use>
+          </svg>
+        </span>
+        <span class="footer_button__text">
+          <span class="button__text">Сохранить на память</span>
+        </span>
+      </span>
     </button>
+    
     <dialog id="menu-dialog" class="footer_dialog">
       <ul class="buttons buttons_dialog">
         <li><svg class="like-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39 39" height="39" width="39">
