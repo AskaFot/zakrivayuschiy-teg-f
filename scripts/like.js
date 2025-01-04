@@ -39,3 +39,30 @@ function setButtonText(heart, button) {
     );
   }
 }
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   // Получаем элементы
+//   const openButton = document.querySelector('.save_button'); // Кнопка "Сохранить на память"
+//   const dialog = document.getElementById('footer_dialog'); // Диалоговое окно
+//   const closeButton = dialog.querySelector('.button_close'); // Кнопка "Ок" внутри диалога
+
+//   // Обработчик для открытия модального окна
+//   openButton.addEventListener('click', () => {
+//     if (dialog) {
+//       dialog.showModal();
+//     } else {
+//       console.error('Диалоговое окно не найдено.');
+//     }
+//   });
+
+//   // Обработчик для закрытия модального окна
+//   closeButton.addEventListener('click', () => {
+//     if (dialog) {
+//       dialog.close();
+//     } else {
+//       console.error('Диалоговое окно не найдено.');
+//     }
+//   });
+// });
+
+
