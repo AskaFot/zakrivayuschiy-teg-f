@@ -9,3 +9,122 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border: var(--border-section);
+  color: #808080;
+  background-color: var(--dark-color);
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(-100%);
+}
+
+.button:hover::before {
+  transform: translateX(0);
+}
+
+.button:focus-visible {
+  border: var(--border-section);
+  box-shadow: 2px 2px rgba(0, 0, 0, 1);
+  transition: box-shadow 0.5s ease-in-out;
+}
+
+.heart:hover .core {
+  fill: var(--heart-filling-hover);
+  transition-delay: 0s;
+}
+
+.heart .main-body {
+  fill: var(--transparency-heart);
+  transition: fill 0.3s ease-in-out 0s;
+}
+
+.heart:hover .main-body {
+  fill: var(--heart-filling-hover);
+  transition-delay: 0.05s;
+}
+
+.heart .main-body:hover {
+  fill: var(--transparency-heart);
+  transition: fill 0.3s ease-out;
+}
+
+.heart .core {
+  fill: var(--transparency-heart);
+  transition: fill 0.3s ease-in;
+}
+
+.heart:active .core {
+  fill: var(--heart-filling-active);
+  transition-delay: 0s;
+}
+
+.heart:active .main-body {
+  fill: var(--heart-filling-active);
+  transition-delay: 0.05s;
+}
+
+.heart .main-body:active {
+  fill: var(--transparency-heart);
+  transition: fill 0.3s ease-out;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--heart-is-liked);
+  transition-delay: 0s;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--heart-is-liked);
+  transition-delay: 0.05s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--heart-is-liked);
+  transition-delay: 0.06s;
+}
+
+.like-icon .contour {
+  fill: var(--heart-contour);
+}
+
+.like-icon.is-liked .heart {
+  fill: var(--heart-is-liked);
+  transition: scale(1.25) 0.1s ease-in;
+  animation-iteration-count: 1;
+  animation-duration: 0.3s;
+}
+
+@keyframes scale-heart {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.25);
+  }
+}
+
+
+@keyframes sparks-opacity {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Становятся видимыми искры */
+.like-icon.is-liked .sparks {
+  fill: var(--heart-is-liked);
+  animation: sparks-opacity 0.3s ease-in 0.3s forwards;
+}
