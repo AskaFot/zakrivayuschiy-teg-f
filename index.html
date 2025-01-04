@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="./styles/globals.css" />
   <link rel="stylesheet" href="./styles/style.css" />
   <link rel="stylesheet" href="./styles/animations.css" />
+  <link rel="icon" href="./images/favicon.png" sizes="any">
+  <link rel="icon" href="./svg/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./images/favicon.png">
 </head>
 
 <body class="page ">
@@ -364,25 +367,25 @@
   <footer class="footer">
 
     <button onclick="window['menu-dialog'].showModal()" class="save_button save_button_cmd_open button_effect">
-      <ul class="footer_card buttons">
-        <li>
+      <div class="footer_card buttons">
+        <div>
           <svg class="like-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39 39" height="25" width="25">
             <use href="./svg/floppy.svg#floppy"></use>
           </svg>
-        </li>
-        <li class="footer_button__text">
+        </div>
+        <div class="footer_button__text">
           <span class="button__text">Сохранить на память</span>
-        </li>
-      </ul>
+        </div>
+      </div>
     </button>
     <dialog id="menu-dialog" class="footer_dialog">
-      <div class="buttons buttons_dialog">
-        <div><svg class="like-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39 39" height="39" width="39">
+      <ul class="buttons buttons_dialog">
+        <li><svg class="like-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39 39" height="39" width="39">
             <use href="./svg/floppy.svg#floppy"></use>
-          </svg></div>
-        <div class="button__text texе_diskette">Вставьте
-          дискету, чтобы продолжить</div>
-      </div>
+          </svg></li>
+        <li class="button__text texе_diskette">Вставьте
+          дискету, чтобы продолжить</li>
+      </ul>
       <button onclick="window['menu-dialog'].close()" class="save_button save_button_cmd_close">
         <span class="button__text">ок</span>
       </button>
