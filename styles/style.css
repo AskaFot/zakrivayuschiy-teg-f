@@ -80,7 +80,7 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 48px;
+  gap: 51px;
   font-size: var(--font-size);
   inline-size: clamp(0px, calc(48.33vw), 696px);
 }
@@ -404,7 +404,7 @@ body:has(.save_button [open]) {
   }
 
   .main {
-    gap: 53px;
+   gap: 53px;
   }
 
   .card_text_element {
@@ -413,13 +413,15 @@ body:has(.save_button [open]) {
   }
 
   .paragraph {
+    gap: 27px;
+    padding-block-start: 24px;
     padding-inline: 26px;
-    padding-block-start: 22px;
+    padding-block-end: 21px;
   }
 
   .card_like {
     padding-inline-end: 24.5px;
-    padding-block-end: 21.5px;
+    padding-block-end: 23.5px;
   }
 
   .save_button {
