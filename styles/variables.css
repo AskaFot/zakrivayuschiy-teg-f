@@ -1,12 +1,13 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-  --font-variation-settings: "Inter", sans-serif;
-  --accent-font-family: "PressStart2P", monospace;
+  --main-font: "Inter", sans-serif;
+  --font-variation-settings: "PressStart2P", fantasy;
   --basic-font-text: 400;
   --basic-font-title: 700;
   --font-size: 18px;
   --text-color: rgba(0, 0, 0, 1);
   --border-section: 2px solid rgba(0, 0, 0, 1);
+  --border-transparent: 2px solid transparent;
   --content-max-width: 1440px;
   --content-min-width: 375px;
   --text-weight: 400;
@@ -29,6 +30,7 @@
 
   --light-color: rgba(255, 255, 255, 1);
   --dark-color: rgba(0, 0, 0, 1);
+  
   --outline-color: rgba(255, 255, 255, 1);
   --heart-main-body: rgba(255, 0, 0, 1);
   --heart-contour: rgba(0, 0, 0, 1);

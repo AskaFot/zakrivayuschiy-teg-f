@@ -12,11 +12,11 @@
 
 .page {
   display: flex;
-  max-width: var(--content-max-width);
   flex-direction: column;
   align-items: center;
+  max-width: var(--content-max-width);
   color: var(--text-color) rgba(0, 0, 0, 1);
-  font-family: var(--font-variation-settings, 'Inter', sans-serif);
+  font-family: var(--main-font, "Inter", sans-serif);
   background-image: var(--background-image);
   background-repeat: no-repeat;
   background-position: center;
@@ -31,19 +31,12 @@ button {
 
 @supports (font-variation-settings: normal) {
   body {
-    font-family: var(--font-variation-settings);
+    font-family: var(--main-font);
   }
 }
 
 .header {
   padding-block: clamp(100px, calc(98px + (2 / 1065) * (100vw - 375px)), 102px);
-  inline-size: clamp(0px, calc(48.33vw), 696px);
-}
-
-.background {
-  border: var(--border-section);
-  background-color: var(--light-color);
-  inline-size: clamp(var(--content-min-width), 100%, var(--content-max-width));
 }
 
 .header_title {
@@ -51,11 +44,17 @@ button {
   flex-direction: column;
   align-items: center;
   gap: 33px;
-  padding: clamp(120px, 15vw, 134px) clamp(14px, 0vw, 120.5px);
+  border: var(--border-section);
+  padding-inline: clamp(14px,
+      calc(14px + (120.5 - 14) * ((100vw - 375px) / (1440 - 375))),
+      120.5px);
+  padding-block: clamp(120px, 15vw, 134px);
+  background-color: var(--light-color);
+  inline-size: clamp(var(--content-min-width), 100%, var(--content-max-width));
 }
 
 h1 {
-  font-family: var(--accent-font-family, 'PressStart2P', monospace);
+  font-family: var(--font-variation-settings, "PressStart2P", fantasy);
   font-weight: 400;
   font-size: clamp(3.0625rem, 2.7036rem + 1.5311vw, 4.0625rem);
   line-height: 49px;
@@ -64,8 +63,8 @@ h1 {
   text-underline-position: from-font;
 }
 
-h2 {
-  font-family: var(--accent-font-family, 'PressStart2P', monospace);
+.header_text {
+  font-family: var(--font-variation-settings, "PressStart2P", fantasy);
   font-weight: 400;
   font-size: clamp(0.875rem, 0.6731rem + 0.8612vw, 1.4375rem);
   line-height: 14px;
@@ -73,7 +72,7 @@ h2 {
   text-transform: uppercase;
 }
 
-h3 {
+h2 {
   font-size: var(--font-size);
 }
 
@@ -95,13 +94,14 @@ h3 {
 }
 
 .card_titile {
+  border-bottom: var(--border-section);
   padding: 5px 10px;
   font-variation-settings: "wght" var(--title-weight);
 }
 
 .card_img {
   position: relative;
-  block-size: clamp(0px, 100vw, 702px);
+  block-size: clamp(0px, 99vw, 699px);
 }
 
 .card_img img {
@@ -112,57 +112,64 @@ h3 {
   background-size: cover;
 }
 
-.img_filter_girl {
+.filter_brightness {
   filter: brightness(50%);
 }
 
-.img_filter_girlS {
+.filter_contrast {
   filter: contrast(95%);
 }
 
-.img_filter_gadget {
+.filter_opacity {
   filter: opacity(0.9);
 }
 
-.img_filter_code {
+.filter_grayscale {
   filter: grayscale(0.2);
 }
 
-.img_filter_time {
+.filter_rotate {
   filter: hue-rotate(-90deg);
 }
 
-.img_filter_teg {
+.filter_sepia {
   filter: sepia(80%);
 }
 
-.img_filter_comp {
+.filter_invert {
   filter: invert(0.1);
 }
 
-.img_filter_computer {
+.filter_opacity_brightness {
   filter: opacity(1) brightness(50%);
 }
 
 .card_text_element {
   position: absolute;
   z-index: 2;
-  color: rgba(0, 0, 0, 1);
   opacity: 0.5;
-  font-family: var(--accent-font-family, 'PressStart2P', monospace);
+  color: rgba(0, 0, 0, 1);
+  font-family: var(--font-variation-settings, "PressStart2P", fantasy);
   font-weight: 400;
   font-size: 14px;
   line-height: 14px;
-  -webkit-text-stroke: 1px var(--outline-color);
+  text-shadow: 1px 1px 2px var(--outline-color);
   inset-inline-end: 26px;
   inset-block-start: 28px;
   mix-blend-mode: hard-light;
 }
 
-@supports (text-stroke: 4px #fff) {
+@supports (text-stroke: 1px var(--outline-color)) {
   .card_text_element {
-    text-stroke: 1px var(--outline-color);
     text-shadow: none;
+    text-stroke: 1px var(--outline-color);
+  }
+}
+
+@supports (-webkit-text-stroke: 1px var(--outline-color)) {
+  .card_text_element {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--outline-color);
   }
 }
 
@@ -170,19 +177,20 @@ h3 {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  border-top: var(--border-section);
   padding: 25px;
 }
 
 .card_text {
-  font-size: 18px;
   font-weight: 400;
+  font-size: 18px;
   line-height: 21px;
   text-align: left;
-    }
+}
 
 .card_like {
-  padding-inline-end: 25.5px;
-  padding-block-end: 24px;
+  padding-inline-end: 22.5px;
+  padding-block-end: 21px;
 }
 
 .buttons {
@@ -190,34 +198,32 @@ h3 {
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  gap: 4px;
+  align-content: center;
+  gap: 6px;
+  transition: box-shadow 0.5s ease;
 }
 
 .card__icon-button {
-  position: relative;
   display: inline-flex;
-  justify-content: center;
   align-items: center;
-  border: 2px solid transparent;
-  border-radius: 0%;
-  padding: 0px;
-  background-color: transparent;
-  transition: border-color 0.3s ease;
+  max-height: 38px;
+  margin-block-start: 4px;
+  border: var(--border-transparent);
+  padding: 2px;
+  outline: none;
+  background: none;
 }
 
 .card__icon-button:focus {
   outline: none;
 }
 
-.card__icon-button:focus-visible {
-  border: var(--border-section);
-  transition: border-color 0.3s ease;
-}
-
 .like-icon {
   display: inline;
-  border: 2px solid transparent;
+  border: var(--border-transparent);
   fill: currentColor;
+  transition: transform 0.3s;
+  animation-timing-function: linear;
 }
 
 .card__like-button {
@@ -227,8 +233,8 @@ h3 {
 }
 
 .card__like-button.is-liked {
-  font-size: 14px;
   padding: 6.5px 35px;
+  font-size: 14px;
   inline-size: 133px;
 }
 
@@ -262,53 +268,58 @@ h3 {
 .button__text {
   position: relative;
   z-index: 3;
-  font-family: var(--accent-font-family, 'PressStart2P', monospace);
+  font-family: var(--font-variation-settings, "PressStart2P", fantasy);
   font-size: 14px;
+  line-height: 12.6px;
+  text-transform: capitalize;
 }
 
 h4 {
   font-size: 14px;
 }
 
-.footer {
-  padding-top: clamp(52px, 52px - 0.19vw, 50px);
+.button__dialog {
+  padding-top: 11px;
   padding-bottom: clamp(100px, 100px + 0.28vw, 103px);
-  inline-size: clamp(306px, 2.08vw + 331px, 322px);
-}
-
-.footer_card {
-  padding-inline: clamp(20px,
-      calc(20px + (21 - 20) * ((100vw - 375px) / (1440 - 375))),
-      21px);
-  padding-block: clamp(15px,
-      calc(15px + (18.5 - 15) * ((100vw - 375px) / (1440 - 375))),
-      18.5px);
+  padding-left: 2px;
 }
 
 .save_button {
   position: relative;
-  inset-block-end: 10px;
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: var(--border-section);
   transition: opacity 0.3s ease-in-out;
-  cursor: pointer;
-  block-size: clamp(55px, calc(55px + (80 - 55) * ((100vw - 375px) / (1440 - 375))), 80px);
+  inset-block-end: 10px;
+  block-size: 55px;
+  inline-size: clamp(306px,
+      calc(306px + (335 - 306) * ((100vw - 375px) / (1440 - 375))),
+      335px);
 }
 
-
 /* Общий стиль модального окна */
-.footer_dialog {
-  display: none;
+.main_dialog {
   position: fixed;
-  inset: 0;
-  padding-block: 30px;
-  padding-inline: clamp(30px, calc(30px + (42 - 30) * ((100vw - 375px) / (1440 - 375))), 42px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background: var(--light-color);
+  display: none;
   border: var(--border-section);
+  padding-inline: clamp(30px,
+      calc(30px + (42 - 30) * ((100vw - 375px) / (1440 - 375))),
+      42px);
+  padding-block: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: var(--light-color);
+  inset-block-end: clamp(236px,
+      calc(236px + (384 - 236) * ((100vw - 375px) / (1440 - 375))),
+      384px);
+  inline-size: clamp(341px,
+      calc(341px + (353 - 341) * ((100vw - 375px) / (1440 - 375))),
+      353px);
 }
 
 /* Открытое состояние диалога */
-.footer_dialog[open] {
+.main_dialog[open] {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -316,9 +327,8 @@ h4 {
 }
 
 /* Стили для заднего слоя */
-.footer_dialog::backdrop {
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
+.main_dialog::backdrop {
+  background: rgba(0, 0, 0, 1);
 }
 
 /* Контент модального окна */
@@ -328,23 +338,26 @@ h4 {
   gap: 30px;
 }
 
-.footer_dialog_buttons {
-  gap: 20px;
-}
-
-.button_footer_dialog {
-  min-inline-size: 270px;
-}
-
 .save_button_cmd_close {
-  inline-size: clamp(257px, calc(246px + (293 - 257) * ((100vw - 375px) / (1440 - 375))), 293px);
-  background-color: transparent;
   border: var(--border-section);
+  background-color: transparent;
+  inline-size: clamp(257px,
+      calc(246px + (293 - 257) * ((100vw - 375px) / (1440 - 375))),
+      293px);
   block-size: 38px;
 }
 
-.texе_diskette {
-  max-width: 198px;
+.button__dialog_text {
+  position: relative;
+  z-index: 3;
+  font-family: var(--font-variation-settings, "PressStart2P", fantasy);
+  font-size: 14px;
+  line-height: 12.6px;
+}
+
+.text-transform {
+  line-height: 21px;
+  text-transform: uppercase;
 }
 
 .buttons_dialog {
@@ -352,19 +365,27 @@ h4 {
   padding-bottom: 30px;
 }
 
-
 body:has(.save_button [open]) {
   overflow: hidden;
 }
 
-.footer_dialog [open] {
+.main_dialog [open] {
   translate: 0;
-
 }
 
-.footer_dialog[open]::backdrop {
-  background-color: rgba(0, 0, 0, 7.5);
+.main_dialog[open]::backdrop {
   opacity: 0.75;
+  background-color: rgba(0, 0, 0, 7.5);
+}
+
+.save_svg {
+  width: 31px;
+  height: 42px;
+  padding-inline-start: 12px;
+}
+
+.dialog_svg {
+  width: 100px;
 }
 
 @media (width <=376px) {
@@ -379,7 +400,11 @@ body:has(.save_button [open]) {
   }
 
   .header_title {
-    gap: 14px;
+    gap: 22px;
+  }
+
+  .main {
+    gap: 53px;
   }
 
   .card_text_element {
@@ -394,10 +419,30 @@ body:has(.save_button [open]) {
 
   .card_like {
     padding-inline-end: 24.5px;
-    padding-block-end: 22px;
+    padding-block-end: 21.5px;
   }
 
-  .footer_card {
+  .save_button {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    padding-block: 15px;
+    block-size: 84px;
+  }
+
+  .button__dialog {
+    padding-top: 10px;
+    padding-left: 0px;
+  }
+
+  .button span,
+  .button svg {
+    border: 2px solid var(--dark-color);
+  }
+
+  .save_svg {
+    padding-inline-start: 0px;
+    min-block-size: 29px;
   }
 }
