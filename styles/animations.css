@@ -121,7 +121,7 @@ sparks — искры вокруг. */
     transform: scale(1.25);
   }
 
-  100%{
+  100% {
     transform: scale(1);
   }
 }
