@@ -49,7 +49,8 @@ sparks — искры вокруг. */
 
 .heart .main-body {
   fill: var(--transparency-heart);
-  transition: fill 0.3s 0.05s;
+  transition: fill 0.3s;
+  transition-delay: 0s;
   animation-timing-function: linear;
 }
 
@@ -57,6 +58,7 @@ sparks — искры вокруг. */
   fill: var(--transparency-heart);
   transition: fill 0.3s;
   animation-timing-function: linear;
+  transition-delay: 0s;
 }
 
 .like-icon .contour {
@@ -69,20 +71,8 @@ sparks — искры вокруг. */
   transition: fill 0.3s 0.05s;
 }
 
-.heart:not(:hover) .main-body {
-  fill: transparent;
-  transition: fill 0.3s;
-  transition-delay: 0s;
-}
-
 .heart:hover .core {
   fill: var(--heart-filling-hover);
-  transition-delay: 0s;
-}
-
-.heart:not(:hover) .heart-core {
-  fill: var(--transparency-heart);
-  transition: fill 0.3s;
   transition-delay: 0s;
 }
 
@@ -127,8 +117,12 @@ sparks — искры вокруг. */
     transform: scale(1);
   }
 
-  100% {
+  50% {
     transform: scale(1.25);
+  }
+
+  100%{
+    transform: scale(1);
   }
 }
 
@@ -137,7 +131,6 @@ sparks — искры вокруг. */
   animation-name: scale-heart;
   animation-delay: 0.1s;
   animation-direction: alternate;
-  animation-timing-function: ease-in;
   animation-duration: 0.3s;
 }
 
