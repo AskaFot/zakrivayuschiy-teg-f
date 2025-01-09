@@ -15,6 +15,40 @@ contour — контур;
 main-body — основное тело сердца;
 sparks — искры вокруг. */
 
+/* основные */
+.card__icon-button {
+  display: inline-flex;
+  align-items: center;
+  max-height: 38px;
+  /* margin-block-start: 4px; */
+  border: var(--border-transparent);
+  padding: 2px;
+  outline: none;
+  background: none;
+  transition: border-color 0.3s ease;
+}
+
+.heart .main-body {
+  fill: var(--transparency-heart);
+  transition: fill 0.3s;
+  transition-delay: 0s;
+  transform: linear;
+}
+
+.heart .core {
+  fill: var(--transparency-heart);
+  transition: fill 0.3s;
+  transform: linear;
+  transition-delay: 0.03s;
+}
+
+.like-icon .contour {
+  fill: var(--heart-contour);
+  transition: fill 0.1s;
+  transition-delay: 0s;
+  transform: linear;
+}
+
 .button::before {
   content: "";
   position: absolute;
@@ -42,33 +76,12 @@ sparks — искры вокруг. */
 
 .card__icon-button:focus-visible {
   border: var(--border-section);
-  transition: border-color 0.3s ease;
-}
-
-/* основные */
-
-.heart .main-body {
-  fill: var(--transparency-heart);
-  transition: fill 0.3s;
-  transition-delay: 0s;
-  animation-timing-function: linear;
-}
-
-.heart .core {
-  fill: var(--transparency-heart);
-  transition: fill 0.3s;
-  animation-timing-function: linear;
-  transition-delay: 0s;
-}
-
-.like-icon .contour {
-  fill: var(--heart-contour);
 }
 
 /* hover */
 .heart:hover .main-body {
   fill: var(--heart-contour) rgba(0, 0, 0, 1);
-  transition: fill 0.3s 0.05s;
+  transition: fill 0.3s 0.05s linear;
 }
 
 .heart:hover .core {
@@ -95,21 +108,22 @@ sparks — искры вокруг. */
   fill: var(--heart-is-liked);
   transition-delay: 0.05s;
   transition-duration: 0.3s;
-  animation-timing-function: linear;
+  transform: linear;
+  transition:linear;
 }
 
 .like-icon.is-liked .core {
   fill: var(--heart-is-liked);
   transition-delay: 0s;
   transition-duration: 0.3s;
-  animation-timing-function: linear;
+  transform: linear;
 }
 
 .like-icon.is-liked .contour {
   fill: var(--heart-is-liked);
   transition-delay: 0.06s;
   transition-duration: 0.3s;
-  animation-timing-function: linear;
+  transform: linear;
 }
 
 @keyframes scale-heart {
@@ -133,7 +147,6 @@ sparks — искры вокруг. */
   animation-direction: alternate;
   animation-duration: 0.3s;
 }
-
 
 @keyframes sparks-opacity {
   0% {
