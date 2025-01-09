@@ -1,39 +1,35 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+
 :root {
-  --main-font: "Inter", sans-serif;
-  --font-accent: "PressStart2P", fantasy;
+  --main-font: 'Inter', sans-serif;
+  --font-accent: 'PressStart2P', fantasy;
   --basic-font-text: 400;
   --basic-font-title: 700;
   --font-size: 18px;
-  --text-color: rgba(0, 0, 0, 1);
-  --border-section: 2px solid rgba(0, 0, 0, 1);
+  --text-color: rgb(0 0 0 / 1);
+  --border-section: 2px solid rgb(0 0 0 / 1);
   --border-transparent: 2px solid transparent;
   --content-max-width: 1440px;
   --content-min-width: 375px;
   --text-weight: 400;
   --title-weight: 700;
---background-image: 
-repeating-linear-gradient(
+  --background-image: repeating-linear-gradient(
       to right,
-      #d3d3d3 0px 2px,
+      #d3d3d3 0 2px,
       transparent 2px 4px
     ),
-    repeating-linear-gradient(
-     to bottom,
-      #d3d3d3 0px 2px,
-      transparent 2px 4px
-    ),
-    linear-gradient(#e7e7e7 0.01%, #1a1a1a 100%); 
+    repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
+    linear-gradient(#e7e7e7 0.01%, #1a1a1a 100%);
 
-  --light-color: rgba(255, 255, 255, 1);
-  --dark-color: rgba(0, 0, 0, 1);
-  --outline-color: rgba(255, 255, 255, 1);
-  --heart-main-body: rgba(255, 0, 0, 1);
-  --heart-contour: rgba(0, 0, 0, 1);
-  --heart-sparks: rgba(255, 0, 0, 1);
-  --heart-core: rgba(255, 255, 255, 1);
-  --heart-filling-active: rgba(255, 0, 0, 1);
-  --heart-is-liked: rgba(255, 0, 0, 1);
-  --heart-filling-hover: rgba(0, 0, 0, 1);
-  --transparency-heart: rgba(0, 0, 0, 0);
+  --light-color: rgb(255 255 255 / 1);
+  --dark-color: rgb(0 0 0 / 1);
+  --outline-color: rgb(255 255 255 / 1);
+  --heart-main-body: rgb(255 0 0 / 1);
+  --heart-contour: rgb(0 0 0 / 1);
+  --heart-sparks: rgb(255 0 0 / 1);
+  --heart-core: rgb(255 255 255 / 1);
+  --heart-filling-active: rgb(255 0 0 / 1);
+  --heart-is-liked: rgb(255 0 0 / 1);
+  --heart-filling-hover: rgb(0 0 0 / 1);
+  --transparency-heart: rgb(0 0 0 / 0);
 }
