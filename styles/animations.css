@@ -30,7 +30,7 @@ sparks — искры вокруг. */
 
 .heart .main-body {
   fill: var(--transparency-heart);
-  transition: fill  0.3s linear 0s;
+  transition: fill 0.3s linear 0s;
 }
 
 .heart .core {

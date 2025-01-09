@@ -16,13 +16,13 @@
   align-items: center;
   max-width: var(--content-max-width);
   color: var(--text-color) rgb(0 0 0 / 1);
-  font-family: var(--main-font, "Inter", sans-serif);
+  font-family: var(--main-font, 'Inter', sans-serif);
   background-image: var(--background-image);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  font-variation-settings: "wght" var(--text-weight);
+  font-variation-settings: 'wght' var(--text-weight);
 }
 
 button {
@@ -30,7 +30,6 @@ button {
 }
 
 @supports (font-variation-settings: normal) {
-
   body {
     font-family: var(--main-font);
   }
@@ -55,7 +54,7 @@ button {
 }
 
 h1 {
-  font-family: var(--font-accent, "PressStart2P", fantasy);
+  font-family: var(--font-accent, 'PressStart2P', fantasy);
   font-weight: 400;
   font-size: clamp(3.0625rem, 2.7036rem + 1.5311vw, 4.0625rem);
   line-height: 49px;
@@ -65,7 +64,7 @@ h1 {
 }
 
 .header_text {
-  font-family: var(--font-accent, "PressStart2P", fantasy);
+  font-family: var(--font-accent, 'PressStart2P', fantasy);
   font-weight: 400;
   font-size: clamp(0.875rem, 0.6731rem + 0.8612vw, 1.4375rem);
   line-height: 14px;
@@ -97,7 +96,7 @@ h2 {
 .card_titile {
   border-bottom: var(--border-section);
   padding: 5px 10px;
-  font-variation-settings: "wght" var(--title-weight);
+  font-variation-settings: 'wght' var(--title-weight);
 }
 
 .card_img {
@@ -150,7 +149,7 @@ h2 {
   z-index: 2;
   opacity: 0.5;
   color: rgb(0 0 0 / 1);
-  font-family: var(--font-accent, "PressStart2P", fantasy);
+  font-family: var(--font-accent, 'PressStart2P', fantasy);
   font-weight: 400;
   font-size: 14px;
   line-height: 14px;
@@ -161,7 +160,6 @@ h2 {
 }
 
 @supports (text-stroke: 1px var(--outline-color)) {
-
   .card_text_element {
     text-shadow: none;
     text-stroke: 1px var(--outline-color);
@@ -169,7 +167,6 @@ h2 {
 }
 
 @supports (-webkit-text-stroke: 1px var(--outline-color)) {
-
   .card_text_element {
     text-shadow: none;
     -webkit-text-stroke: 1px var(--outline-color);
@@ -203,8 +200,8 @@ h2 {
   justify-content: flex-end;
   align-items: center;
   align-content: center;
-  transition: box-shadow 0.3s ease;
   gap: 4px;
+  transition: box-shadow 0.3s ease;
 }
 
 .card__icon-button:focus {
@@ -224,9 +221,11 @@ h2 {
 .card__like-button.is-liked {
   padding: 6.5px 35px;
   font-size: 14px;
-  inline-size: 133px;}
+  inline-size: 133px;
+}
 
 .button {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -244,7 +243,6 @@ h2 {
   max-block-size: 55px;
   min-inline-size: 130px;
   inline-size: 133px;
-  position: relative;
 }
 
 .button span,
@@ -262,7 +260,7 @@ h2 {
 .button__text {
   position: relative;
   z-index: 3;
-  font-family: var(--font-accent, "PressStart2P", fantasy);
+  font-family: var(--font-accent, 'PressStart2P', fantasy);
   font-size: 14px;
   line-height: 12.6px;
 }
@@ -277,10 +275,10 @@ h4 {
 }
 
 .button__dialog .button:first-child {
+  padding-block: 10px;
   inline-size: clamp(306px,
       calc(306px + (335 - 306) * ((100vw - 375px) / (1440 - 375))),
       335px);
-      padding-block: 10px;
 }
 
 /* Общий стиль модального окна */
@@ -288,6 +286,7 @@ h4 {
 .main_dialog {
   position: fixed;
   display: none;
+  margin: auto;
   border: var(--border-section);
   padding-inline: clamp(30px,
       calc(30px + (42 - 30) * ((100vw - 375px) / (1440 - 375))),
@@ -302,7 +301,7 @@ h4 {
       calc(341px + (353 - 341) * ((100vw - 375px) / (1440 - 375))),
       353px);
   inset-block: 50%;
-  margin: auto;}
+}
 
 /* Открытое состояние диалога */
 
@@ -371,7 +370,6 @@ body:has(.save_button [open]) {
 }
 
 @media (width <=376px) {
-
   .page {
     padding-inline-start: 0;
     padding-inline-end: 0;
@@ -415,9 +413,9 @@ body:has(.save_button [open]) {
   }
 
   .button__dialog .button:first-child {
+    gap: 4px;
     padding-inline-end: 4px;
     max-block-size: 84px;
-    gap: 4px;
   }
 
   .save_svg {
