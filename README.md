@@ -4,4 +4,4 @@ https://github.com/AskaFot/zakrivayuschiy-teg-f.git
 
 ## Ссылка на опубликованный проект
 
-[Мой сайт на GitHub Pages]([https://username.github.io/repository-name/](https://askafot.github.io/zakrivayuschiy-teg-f/))
+[Мой сайт на GitHub Pages]  https://askafot.github.io/zakrivayuschiy-teg-f/
