@@ -13,8 +13,6 @@
 .page {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  max-width: var(--content-max-width);
   color: var(--text-color) rgb(0 0 0 / 1);
   font-family: var(--main-font, 'Inter', sans-serif);
   background-image: var(--background-image);
@@ -23,6 +21,7 @@
   background-size: cover;
   background-attachment: fixed;
   font-variation-settings: 'wght' var(--text-weight);
+  align-items: center;
 }
 
 button {
@@ -30,6 +29,7 @@ button {
 }
 
 @supports (font-variation-settings: normal) {
+
   body {
     font-family: var(--main-font);
   }
@@ -45,9 +45,11 @@ button {
   align-items: center;
   gap: 33px;
   border: var(--border-section);
-  padding-inline: clamp(14px,
-      calc(14px + (120.5 - 14) * ((100vw - 375px) / (1440 - 375))),
-      120.5px);
+  padding-inline: clamp(
+    14px,
+    calc(14px + (120.5 - 14) * ((100vw - 375px) / (1440 - 375))),
+    120.5px
+  );
   padding-block: clamp(120px, 15vw, 134px);
   background-color: var(--light-color);
   inline-size: clamp(var(--content-min-width), 100%, var(--content-max-width));
@@ -160,6 +162,7 @@ h2 {
 }
 
 @supports (text-stroke: 1px var(--outline-color)) {
+
   .card_text_element {
     text-shadow: none;
     text-stroke: 1px var(--outline-color);
@@ -167,6 +170,7 @@ h2 {
 }
 
 @supports (-webkit-text-stroke: 1px var(--outline-color)) {
+
   .card_text_element {
     text-shadow: none;
     -webkit-text-stroke: 1px var(--outline-color);
@@ -200,7 +204,7 @@ h2 {
   justify-content: flex-end;
   align-items: center;
   align-content: center;
-  gap: 4px;
+  gap: 1px;
   transition: box-shadow 0.3s ease;
 }
 
@@ -230,7 +234,7 @@ h2 {
   justify-content: center;
   align-items: center;
   align-content: center;
-  gap: 6px;
+  gap: 7px;
   border: var(--border-section);
   padding-inline: 0;
   box-shadow: 2px 2px transparent;
@@ -275,10 +279,12 @@ h4 {
 }
 
 .button__dialog .button:first-child {
-  padding-block: 10px;
-  inline-size: clamp(306px,
-      calc(306px + (335 - 306) * ((100vw - 375px) / (1440 - 375))),
-      335px);
+  padding-block: 15px;
+  inline-size: clamp(
+    306px,
+    calc(306px + (335 - 306) * ((100vw - 375px) / (1440 - 375))),
+    335px
+  );
 }
 
 /* Общий стиль модального окна */
@@ -288,18 +294,18 @@ h4 {
   display: none;
   margin: auto;
   border: var(--border-section);
-  padding-inline: clamp(30px,
-      calc(30px + (42 - 30) * ((100vw - 375px) / (1440 - 375))),
-      42px);
+  padding-inline: 30px;
   padding-block: 30px;
   box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
   overflow: hidden;
   line-height: 21px;
   text-transform: uppercase;
   background: var(--light-color);
-  inline-size: clamp(341px,
-      calc(341px + (353 - 341) * ((100vw - 375px) / (1440 - 375))),
-      353px);
+  inline-size: clamp(
+    341px,
+    calc(350px + (353 - 341) * ((100vw - 375px) / (1440 - 375))),
+    357px
+  );
   inset-block: 50%;
 }
 
@@ -329,9 +335,7 @@ h4 {
 .save_button_cmd_close {
   border: var(--border-section);
   background-color: transparent;
-  inline-size: clamp(257px,
-      calc(246px + (293 - 257) * ((100vw - 375px) / (1440 - 375))),
-      293px);
+  inline-size: 294px;
   block-size: 38px;
 }
 
@@ -360,16 +364,21 @@ body:has(.save_button [open]) {
   line-height: 21px;
 }
 
+.main_dialog button .button__text {
+  text-transform: uppercase;
+}
+
 .save_svg {
-  width: 24px;
-  height: 32px;
+  max-width: 24px;
 }
 
 .dialog_svg {
-  width: 100px;
+  width: 100%;
+  max-width: 39px;
 }
 
 @media (width <=376px) {
+
   .page {
     padding-inline-start: 0;
     padding-inline-end: 0;
@@ -385,7 +394,7 @@ body:has(.save_button [open]) {
   }
 
   .main {
-    gap: 51px;
+    gap: 52px;
   }
 
   .card_text_element {
@@ -412,14 +421,27 @@ body:has(.save_button [open]) {
     inline-size: 131px;
   }
 
+  .main_dialog {
+    padding-inline: 40px;
+    inline-size: 341px;
+  }
+
   .button__dialog .button:first-child {
-    gap: 4px;
+    gap: 0;
     padding-inline-end: 4px;
     max-block-size: 84px;
   }
 
+  .save_button_cmd_close {
+    inline-size: clamp(
+      257px,
+      calc(246px + (293 - 257) * ((100vw - 375px) / (1440 - 375))),
+      294px
+    );
+  }
+
   .save_svg {
-    padding-block-start: 2px;
-    min-inline-size: 38px;
+    min-inline-size: 31px;
+    min-block-size: 31px;
   }
 }
